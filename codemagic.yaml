@@ -1,0 +1,5 @@
+workflows:
+    mytodo-workflow:
+        name: Codemagic Mytodo Workflow
+        environment:
+            flutter: stable
