@@ -1,6 +1,6 @@
-# todo
+# mytodo
 
-A new Flutter project.
+My todo app.
 
 ## Getting Started
 

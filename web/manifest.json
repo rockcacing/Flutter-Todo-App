@@ -1,11 +1,11 @@
 {
-    "name": "todo",
-    "short_name": "todo",
+    "name": "mytodo",
+    "short_name": "mytodo",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "My todo app.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

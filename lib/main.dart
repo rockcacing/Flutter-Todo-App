@@ -1,20 +1,28 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const TodoApp());
+  runApp(
+    DevicePreview(
+      enabled: false,
+      builder: (context) => const MyTodoApp(),
+    ),
+  );
 }
 
-class TodoApp extends StatelessWidget {
-  const TodoApp({super.key});
+class MyTodoApp extends StatelessWidget {
+  const MyTodoApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Todo Manager',
+      title: 'Mytodo App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const TodoList(title: 'Todo Manager'),
+      home: const TodoList(title: 'Mytodo App'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -46,6 +54,25 @@ class _TodoListState extends State<TodoList> {
   }
 
   void _deleteTodo(Todo todo) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Confirm to delete?"),
+          // content: const Text("This is my message."),
+          actions: [
+            OutlinedButton(
+              child: const Text("Yes"),
+              onPressed: () {},
+            ),
+            OutlinedButton(
+              child: const Text("No"),
+              onPressed: () {},
+            ),
+          ],
+        );
+      },
+    );
     setState(() {
       _todos.removeWhere((element) => element.name == todo.name);
     });
